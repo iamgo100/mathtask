@@ -3,13 +3,11 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async (url, src) => {
+const getData = async (url, src, list) => {
     if (src) {
         let res = await fetch(url);
         res = await res.json();
-        let list = [];
         res[src].forEach(elem => list.push(elem));
-        return list;
     }
 };
 
@@ -46,7 +44,7 @@ else {
     title.textContent = 'Отдел непонимания';
     document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
 }
-let data = getData('db/data.json', src);
+let data = getData('db/data.json', src, data);
 console.log(data);
 
 let carts = '';
