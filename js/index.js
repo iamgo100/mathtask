@@ -47,6 +47,7 @@ else {
     document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
 }
 let data = getData('db/data.json', src);
+console.log(data);
 
 let carts = '';
 for (let i = 0; i < 5; i++){
