@@ -33,7 +33,7 @@ const check = (data) => {
 let data = getData('db/data.json');
 let src = '';
 
-if (document.location.pathname == '/architect/'){
+if (document.location.pathname == '/mathtask/architect/'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
 }
@@ -42,6 +42,8 @@ else {
     src = 'design';
 }
 let thisData = data[src];
+console.log(data);
+console.log(thisData);
 
 let carts = '';
 for (let i = 0; i < 5; i++){
