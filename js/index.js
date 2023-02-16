@@ -3,11 +3,10 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async () => {
+const getData = async (list) => {
     let res = await fetch('db/data.json');
     res = await res.json();
-    // res.forEach(elem => list.push(elem));
-    return res;
+    res.forEach(elem => list.push(elem));
 };
 
 const check = (data) => {
@@ -30,7 +29,7 @@ const check = (data) => {
     }
 };
 
-let data = getData();
+let data = []; getData(data);
 console.log(Array.from(data));
 
 let src = '';
