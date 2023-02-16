@@ -3,8 +3,8 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async (url, list) => {
-    let res = await fetch(url);
+const getData = async (list) => {
+    let res = await fetch('db/data.json');
     res = await res.json();
     res.forEach(elem => list.push(elem));
 };
@@ -29,8 +29,8 @@ const check = (data) => {
     }
 };
 
-let data = []; getData('db/data.json', data);
-console.log(data);
+let data = []; getData(data);
+console.log(Array(data));
 let src = '';
 if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
@@ -48,8 +48,6 @@ else {
 }
 
 console.log(data);
-console.log(data[1].capture);
-console.log(data[2]);
 
 let carts = '';
 for (let i = 0; i < 5; i++){
