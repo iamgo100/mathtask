@@ -47,7 +47,7 @@ else {
 let data = []; getData('db/data.json', src, data);
 console.log(data);
 console.log(data.capture);
-console.log(data[2]);
+console.log(data['2']);
 
 let carts = '';
 for (let i = 0; i < 5; i++){
