@@ -6,8 +6,9 @@ const prompt = document.querySelector('#prompt');
 const getData = async () => {
     let res = await fetch('db/data.json');
     res = await res.json();
-    // res.forEach(elem => list.push(elem));
-    return Array.from(res);
+    let list;
+    res.forEach(elem => list.push(elem));
+    return Array.from(list);
 };
 
 const check = (data) => {
