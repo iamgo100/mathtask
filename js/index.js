@@ -3,10 +3,11 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async (list) => {
+const getData = async () => {
     let res = await fetch('db/data.json');
     res = await res.json();
-    res.forEach(elem => list.push(elem));
+    // res.forEach(elem => list.push(elem));
+    return Array.from(res);
 };
 
 const check = (data) => {
@@ -29,19 +30,19 @@ const check = (data) => {
     }
 };
 
-let data = []; getData(data);
-console.log(Array(data));
+let data = getData();
+console.log(data);
 
 let src = '';
 if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
-    data = Array(data[0])[0];
+    data = data[0];
 }
 else if (document.location.search == '?d=d'){
     title.textContent = 'Отдел дизайна';
     src = 'design';
-    data = Array(data[1])[0];
+    data = data[1];
 }
 else {
     title.textContent = 'Отдел непонимания';
