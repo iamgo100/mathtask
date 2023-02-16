@@ -3,10 +3,10 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async (url) => {
+const getData = async (url, src) => {
     let res = await fetch(url);
     res = await res.json();
-    let list = res;
+    let list = res[src];
     return list;
 };
 
@@ -30,7 +30,6 @@ const check = (data) => {
     }
 };
 
-let data = getData('db/data.json');
 let src = '';
 
 if (document.location.pathname == '/mathtask/architect/'){
@@ -41,20 +40,19 @@ else {
     title.textContent = 'Отдел дизайна';
     src = 'design';
 }
-let thisData = data[src];
+let data = getData('db/data.json', src);
 console.log(data);
-console.log(thisData);
 
 let carts = '';
 for (let i = 0; i < 5; i++){
     carts += `
         <div class="cart">
-            <img src="assets/${src}/${thisData[i].capture}" class="cart-img">
-            <label>${thisData[i].label}</label>
+            <img src="assets/${src}/${data[i].capture}" class="cart-img">
+            <label>${data[i].label}</label>
             <input placeholder="Введи ответ" class="ans">
         </div>
     `;
 }
 cont.innerHTML = carts;
 
-btn.addEventListener('click', () => {check(thisData);});
+btn.addEventListener('click', () => {check(data);});
