@@ -6,9 +6,8 @@ const prompt = document.querySelector('#prompt');
 const getData = async () => {
     let res = await fetch('db/data.json');
     res = await res.json();
-    let list;
-    res.forEach(elem => list.push(elem));
-    return Array.from(list);
+    // res.forEach(elem => list.push(elem));
+    return res;
 };
 
 const check = (data) => {
@@ -32,7 +31,7 @@ const check = (data) => {
 };
 
 let data = getData();
-console.log(data);
+console.log(Array.from(data));
 
 let src = '';
 if (document.location.search == '?d=a'){
