@@ -34,11 +34,11 @@ const check = (data) => {
 };
 
 let src = '';
-if (document.location.pathname == '/mathtask/architect/'){
+if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
 }
-else if (document.location.pathname == '/mathtask/design/'){
+else if (document.location.search == '?d=d'){
     title.textContent = 'Отдел дизайна';
     src = 'design';
 }
