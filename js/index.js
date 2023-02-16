@@ -4,10 +4,13 @@ const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
 const getData = async (url, src) => {
-    let res = await fetch(url);
-    res = await res.json();
-    let list = res[src];
-    return list;
+    if (src) {
+        let res = await fetch(url);
+        res = await res.json();
+        let list = [];
+        res[src].forEach(elem => list.push(elem));
+        return list;
+    }
 };
 
 const check = (data) => {
@@ -31,17 +34,19 @@ const check = (data) => {
 };
 
 let src = '';
-
 if (document.location.pathname == '/mathtask/architect/'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
 }
-else {
+else if (document.location.pathname == '/mathtask/design/'){
     title.textContent = 'Отдел дизайна';
     src = 'design';
 }
+else {
+    title.textContent = 'Отдел непонимания';
+    document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
+}
 let data = getData('db/data.json', src);
-console.log(data);
 
 let carts = '';
 for (let i = 0; i < 5; i++){
