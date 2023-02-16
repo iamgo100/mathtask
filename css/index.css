@@ -1,0 +1,62 @@
+body, button, input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+h1 {
+    width: 100%;
+    text-align: center;
+}
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+    width: 20%;
+}
+.res-img {
+    width: 60%;
+}
+.cart-img {
+    width: 100%;
+    border-radius: 5px;
+}
+#get-res {
+    height: 50px;
+    border-radius: 10px;
+    border: solid 1px #000;
+    background-color:lightblue;
+    text-align: center;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+#prompt {
+    width: 60%;
+    text-align: center;
+}
+label {
+    width: 100%;
+    text-align: center;
+}
+.ans {
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
+    font-size: large;
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
