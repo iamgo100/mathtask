@@ -1,5 +1,5 @@
-{
-    "architect": [
+[
+    [
         {
             "capture": "f1.png",
             "label": "Фундамент №1",
@@ -26,7 +26,7 @@
             "answer": "6,5"
         }
     ],
-    "design": [
+    [
         {
             "capture": "d1.png",
             "label": "Дизайн №1",
@@ -53,4 +53,4 @@
             "answer": "20"
         }
     ]
-}
+]

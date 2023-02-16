@@ -3,12 +3,10 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async (url, src, list) => {
-    if (src) {
-        let res = await fetch(url);
-        res = await res.json();
-        res[src].forEach(elem => list.push(elem));
-    }
+const getData = async (url, list) => {
+    let res = await fetch(url);
+    res = await res.json();
+    res[src].forEach(elem => list.push(elem));
 };
 
 const check = (data) => {
@@ -31,23 +29,26 @@ const check = (data) => {
     }
 };
 
+let data = []; getData('db/data.json', data);
 let src = '';
 if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
+    data = data[0];
 }
 else if (document.location.search == '?d=d'){
     title.textContent = 'Отдел дизайна';
     src = 'design';
+    data = data[1];
 }
 else {
     title.textContent = 'Отдел непонимания';
     document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
 }
-let data = []; getData('db/data.json', src, data);
+
 console.log(data);
-console.log(data.capture);
-console.log(data['2']);
+console.log(data[1].capture);
+console.log(data[2]);
 
 let carts = '';
 for (let i = 0; i < 5; i++){
