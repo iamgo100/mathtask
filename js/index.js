@@ -30,6 +30,7 @@ const check = (data) => {
 };
 
 let data = []; getData('db/data.json', data);
+console.log(data);
 let src = '';
 if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
