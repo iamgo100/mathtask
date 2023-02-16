@@ -31,16 +31,17 @@ const check = (data) => {
 
 let data = []; getData(data);
 console.log(Array(data));
+
 let src = '';
 if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
-    data = data[0];
+    data = Array(data[0])[0];
 }
 else if (document.location.search == '?d=d'){
     title.textContent = 'Отдел дизайна';
     src = 'design';
-    data = data[1];
+    data = Array(data[1])[0];
 }
 else {
     title.textContent = 'Отдел непонимания';
