@@ -30,7 +30,7 @@ const check = (data) => {
 };
 
 const main = async () => {
-    let res = await fetch(url);
+    let res = await fetch('db/data.json');
     let data = await res.json();
     let thisData = [];
     let src = '';
