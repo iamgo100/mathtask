@@ -5,7 +5,7 @@ const prompt = document.querySelector('#prompt');
 
 const getData = async (url) => {
     let res = await fetch(url);
-    res = await res.json();
+    // res = await res.json();
     return JSON.parse(res);
 };
 
