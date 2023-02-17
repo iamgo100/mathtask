@@ -2,7 +2,12 @@ const title = document.querySelector('#task-title');
 const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
-const dataset = require('db/data.js');
+
+const getData = async (url, list) => {
+    let res = await fetch(url);
+    res = await res.json();
+    res.forEach(el => list.push(el));
+};
 
 const check = (data) => {
     let stAnswers = document.querySelectorAll('.ans');
@@ -24,23 +29,24 @@ const check = (data) => {
     }
 };
 
+let data = []; getData('db/data.json', data);
 let thisData = [];
 let src = '';
 if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
-    thisData = dataset[0];
+    thisData = data[0];
 }
 else if (document.location.search == '?d=d'){
     title.textContent = 'Отдел дизайна';
     src = 'design';
-    thisData = dataset[1];
+    thisData = data[1];
 }
 else {
     title.textContent = 'Отдел непонимания';
     document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
 }
-
+console.log(data);
 console.log(thisData);
 
 let carts = '';
