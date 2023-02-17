@@ -2,7 +2,7 @@ const title = document.querySelector('#task-title');
 const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
-require('db/data.js');
+const dataset = require('db/data.js');
 
 const check = (data) => {
     let stAnswers = document.querySelectorAll('.ans');
@@ -24,17 +24,17 @@ const check = (data) => {
     }
 };
 
-let thisData = []
+let thisData = [];
 let src = '';
 if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
-    thisData = data[0];
+    thisData = dataset[0];
 }
 else if (document.location.search == '?d=d'){
     title.textContent = 'Отдел дизайна';
     src = 'design';
-    thisData = data[1];
+    thisData = dataset[1];
 }
 else {
     title.textContent = 'Отдел непонимания';
