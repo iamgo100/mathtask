@@ -3,22 +3,11 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-// const getData = async (url, list) => {
-//     let res = await fetch(url);
-//     res = await res.json();
-//     res.forEach(el => list.push(el));
-// };
-
 const check = (data) => {
     let stAnswers = document.querySelectorAll('.ans');
     let result = true;
     for (let i = 0; i < 5; i++){
-        if (stAnswers[i].value !== data[i].answer) 
-        {
-            console.log(stAnswers[i].value);
-            console.log(data[i].answer);
-            result = false;
-        }
+        if (stAnswers[i].value !== data[i].answer) result = false;
     }
     if (result) {
         document.querySelector('#task').innerHTML = `
