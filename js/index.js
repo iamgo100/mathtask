@@ -3,10 +3,11 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async (url) => {
+const getData = async (url, list) => {
     let res = await fetch(url);
-    // res = await res.json();
-    return JSON.parse(res);
+    res = await res.json();
+    res.forEach(el => list.push(el));
+    console.log(list);
 };
 
 const check = (data) => {
@@ -29,7 +30,7 @@ const check = (data) => {
     }
 };
 
-let data = getData('db/data.json');
+let data = []; getData('db/data.json', data);
 let thisData = [];
 let src = '';
 if (document.location.search == '?d=a'){
