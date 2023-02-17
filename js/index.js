@@ -3,11 +3,11 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async (url, list) => {
-    let res = await fetch(url);
-    res = await res.json();
-    res.forEach(el => list.push(el));
-};
+// const getData = async (url, list) => {
+//     let res = await fetch(url);
+//     res = await res.json();
+//     res.forEach(el => list.push(el));
+// };
 
 const check = (data) => {
     let stAnswers = document.querySelectorAll('.ans');
@@ -29,37 +29,40 @@ const check = (data) => {
     }
 };
 
-let data = [];
-await getData('db/data.json', data);
-let thisData = [];
-let src = '';
-if (document.location.search == '?d=a'){
-    title.textContent = 'Отдел архитектуры';
-    src = 'architect';
-    thisData = data[0];
-}
-else if (document.location.search == '?d=d'){
-    title.textContent = 'Отдел дизайна';
-    src = 'design';
-    thisData = data[1];
-}
-else {
-    title.textContent = 'Отдел непонимания';
-    document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
-}
-console.log(data);
-console.log(thisData);
+const main = async () => {
+    let res = await fetch(url);
+    let data = await res.json();
+    let thisData = [];
+    let src = '';
+    if (document.location.search == '?d=a'){
+        title.textContent = 'Отдел архитектуры';
+        src = 'architect';
+        thisData = data[0];
+    }
+    else if (document.location.search == '?d=d'){
+        title.textContent = 'Отдел дизайна';
+        src = 'design';
+        thisData = data[1];
+    }
+    else {
+        title.textContent = 'Отдел непонимания';
+        document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
+    }
+    console.log(data);
+    console.log(thisData);
 
-let carts = '';
-for (let i = 0; i < 5; i++){
-    carts += `
-        <div class="cart">
-            <img src="assets/${src}/${thisData[i].capture}" class="cart-img">
-            <label>${thisData[i].label}</label>
-            <input placeholder="Введи ответ" class="ans">
-        </div>
-    `;
-}
-cont.innerHTML = carts;
+    let carts = '';
+    for (let i = 0; i < 5; i++){
+        carts += `
+            <div class="cart">
+                <img src="assets/${src}/${thisData[i].capture}" class="cart-img">
+                <label>${thisData[i].label}</label>
+                <input placeholder="Введи ответ" class="ans">
+            </div>
+        `;
+    }
+    cont.innerHTML = carts;
 
-btn.addEventListener('click', () => {check(thisData);});
+    btn.addEventListener('click', () => {check(thisData);});
+};
+main();
