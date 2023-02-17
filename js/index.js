@@ -7,7 +7,6 @@ const getData = async (url, list) => {
     let res = await fetch(url);
     res = await res.json();
     res.forEach(el => list.push(el));
-    console.log(list);
 };
 
 const check = (data) => {
@@ -30,7 +29,8 @@ const check = (data) => {
     }
 };
 
-let data = []; getData('db/data.json', data);
+let data = [];
+await getData('db/data.json', data);
 let thisData = [];
 let src = '';
 if (document.location.search == '?d=a'){
