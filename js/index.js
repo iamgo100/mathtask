@@ -22,7 +22,7 @@ const check = (data) => {
     }
     if (result) {
         document.querySelector('#task').innerHTML = `
-        <div class="box"><img src="assets/formula.PNG" class="res-img"></div>
+        <div class="img-box"><img src="assets/formula.PNG" class="res-img"></div>
         `;
     }
     else {
