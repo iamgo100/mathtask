@@ -53,7 +53,9 @@ const main = async () => {
     for (let i = 0; i < 5; i++){
         carts += `
             <div class="cart">
-                <img src="assets/${src}/${thisData[i].capture}" class="cart-img">
+                <div class="img-box">
+                    <img src="assets/${src}/${thisData[i].capture}" class="cart-img">
+                </div>
                 <div class="box">
                     <label>${thisData[i].label}</label>
                     <input placeholder="Введи ответ" class="ans">
