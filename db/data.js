@@ -1,4 +1,4 @@
-[
+const data = [
     [
         {
             "capture": "f1.png",
@@ -54,3 +54,4 @@
         }
     ]
 ]
+

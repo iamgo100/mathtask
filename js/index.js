@@ -2,12 +2,7 @@ const title = document.querySelector('#task-title');
 const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
-
-const getData = async (list) => {
-    let res = await fetch('db/data.json');
-    res = await res.json();
-    res.forEach(elem => list.push(elem));
-};
+require('db/data.js');
 
 const check = (data) => {
     let stAnswers = document.querySelectorAll('.ans');
@@ -29,37 +24,35 @@ const check = (data) => {
     }
 };
 
-let data = []; getData(data);
-console.log(Array.from(data));
-
+let thisData = []
 let src = '';
 if (document.location.search == '?d=a'){
     title.textContent = 'Отдел архитектуры';
     src = 'architect';
-    data = data[0];
+    thisData = data[0];
 }
 else if (document.location.search == '?d=d'){
     title.textContent = 'Отдел дизайна';
     src = 'design';
-    data = data[1];
+    thisData = data[1];
 }
 else {
     title.textContent = 'Отдел непонимания';
     document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
 }
 
-console.log(data);
+console.log(thisData);
 
 let carts = '';
 for (let i = 0; i < 5; i++){
     carts += `
         <div class="cart">
-            <img src="assets/${src}/${data[i].capture}" class="cart-img">
-            <label>${data[i].label}</label>
+            <img src="assets/${src}/${thisData[i].capture}" class="cart-img">
+            <label>${thisData[i].label}</label>
             <input placeholder="Введи ответ" class="ans">
         </div>
     `;
 }
 cont.innerHTML = carts;
 
-btn.addEventListener('click', () => {check(data);});
+btn.addEventListener('click', () => {check(thisData);});
