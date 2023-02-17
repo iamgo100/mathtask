@@ -46,7 +46,7 @@ else {
     title.textContent = 'Отдел непонимания';
     document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
 }
-console.log(data);
+console.log(data.length);
 console.log(thisData);
 
 let carts = '';
