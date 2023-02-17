@@ -48,16 +48,16 @@ const main = async () => {
         title.textContent = 'Отдел непонимания';
         document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
     }
-    console.log(data);
-    console.log(thisData);
 
     let carts = '';
     for (let i = 0; i < 5; i++){
         carts += `
             <div class="cart">
                 <img src="assets/${src}/${thisData[i].capture}" class="cart-img">
-                <label>${thisData[i].label}</label>
-                <input placeholder="Введи ответ" class="ans">
+                <div class="box">
+                    <label>${thisData[i].label}</label>
+                    <input placeholder="Введи ответ" class="ans">
+                </div>
             </div>
         `;
     }
