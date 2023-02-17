@@ -13,7 +13,12 @@ const check = (data) => {
     let stAnswers = document.querySelectorAll('.ans');
     let result = true;
     for (let i = 0; i < 5; i++){
-        if (stAnswers[i].value !== data[i].answer) result = false;
+        if (stAnswers[i].value !== data[i].answer) 
+        {
+            console.log(stAnswers[i].value);
+            console.log(data[i].answer);
+            result = false;
+        }
     }
     if (result) {
         document.querySelector('#task').innerHTML = `
