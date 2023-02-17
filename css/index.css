@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+    background-color: #F1FAEE;
+}
 body, button, input {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -28,8 +32,8 @@ h1 {
 #get-res {
     height: 50px;
     border-radius: 10px;
-    border: solid 1px #000;
-    background-color:lightblue;
+    border: solid 1px #666;
+    background-color:#FFD16C;
     text-align: center;
     padding: 10px;
     font-size: large;
