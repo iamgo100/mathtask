@@ -17,7 +17,6 @@ h1 {
     flex-direction: column;
     padding: 20px;
     width: 20%;
-    height: 80%;
 }
 .res-img {
     width: 60%;
@@ -59,6 +58,7 @@ label {
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+    height: 100px;
 }
 .img-box {
     display: flex;
