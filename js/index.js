@@ -3,10 +3,10 @@ const cont = document.querySelector('.cont');
 const btn = document.querySelector('#get-res');
 const prompt = document.querySelector('#prompt');
 
-const getData = async (url, list) => {
+const getData = async (url) => {
     let res = await fetch(url);
     res = await res.json();
-    res.forEach(el => list.push(el));
+    return JSON.parse(res);
 };
 
 const check = (data) => {
@@ -29,7 +29,7 @@ const check = (data) => {
     }
 };
 
-let data = []; getData('db/data.json', data);
+let data = getData('db/data.json');
 let thisData = [];
 let src = '';
 if (document.location.search == '?d=a'){
@@ -46,7 +46,7 @@ else {
     title.textContent = 'Отдел непонимания';
     document.querySelector('#task').innerHTML = `Мы не понимаем, куда вы пришли`;
 }
-console.log(data.length);
+console.log(data);
 console.log(thisData);
 
 let carts = '';
