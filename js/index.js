@@ -28,14 +28,14 @@ const main = async () => {
     let data = await res.json();
     let thisData = [];
     let src = '';
-    if (document.location.search == '?d=a'){
-        title.textContent = 'Отдел архитектуры';
-        src = 'architect';
+    if (document.location.search == '?d=ld'){
+        title.textContent = 'Отдел ландшафтного дизайна';
+        src = 'land';
         thisData = data[0];
     }
-    else if (document.location.search == '?d=d'){
-        title.textContent = 'Отдел дизайна';
-        src = 'design';
+    else if (document.location.search == '?d=di'){
+        title.textContent = 'Отдел дизайна интерьера';
+        src = 'flat';
         thisData = data[1];
     }
     else {
@@ -44,7 +44,7 @@ const main = async () => {
     }
 
     let carts = '';
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 6; i++){
         carts += `
             <div class="cart">
                 <div class="img-box">

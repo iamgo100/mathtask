@@ -1,29 +1,34 @@
 [
     [
         {
-            "capture": "f1.png",
-            "label": "Фундамент №1",
-            "answer": "10,5"
+            "capture": "k1.png",
+            "label": "Клумба №1",
+            "answer": "16"
         },
         {
-            "capture": "f2.png",
-            "label": "Фундамент №2",
-            "answer": "10,5"
+            "capture": "k2.png",
+            "label": "Клумба №2",
+            "answer": "12"
         },
         {
-            "capture": "f3.png",
-            "label": "Фундамент №3",
+            "capture": "k3.png",
+            "label": "Клумба №3",
+            "answer": "12"
+        },
+        {
+            "capture": "k4.png",
+            "label": "Клумба №4",
             "answer": "9"
         },
         {
-            "capture": "f4.png",
-            "label": "Фундамент №4",
-            "answer": "7,5"
+            "capture": "k5.png",
+            "label": "Клумба №5",
+            "answer": "32"
         },
         {
-            "capture": "f5.png",
-            "label": "Фундамент №5",
-            "answer": "6,5"
+            "capture": "k6.png",
+            "label": "Клумба №6",
+            "answer": "6"
         }
     ],
     [
@@ -51,6 +56,11 @@
             "capture": "d5.png",
             "label": "Дизайн №5",
             "answer": "20"
+        },
+        {
+            "capture": "d6.png",
+            "label": "Дизайн №6",
+            "answer": "14"
         }
     ]
 ]
