@@ -1,49 +1,49 @@
 [
     [
         {
-            "capture": "k1.png",
+            "capture": "k1.jpg",
             "label": "Клумба №1",
             "answer": "16"
         },
         {
-            "capture": "k2.png",
+            "capture": "k2.jpg",
             "label": "Клумба №2",
             "answer": "12"
         },
         {
-            "capture": "k3.png",
+            "capture": "k3.jpg",
             "label": "Клумба №3",
             "answer": "12"
         },
         {
-            "capture": "k4.png",
+            "capture": "k4.jpg",
             "label": "Клумба №4",
             "answer": "9"
         },
         {
-            "capture": "k5.png",
+            "capture": "k5.jpg",
             "label": "Клумба №5",
             "answer": "32"
         },
         {
-            "capture": "k6.png",
+            "capture": "k6.jpg",
             "label": "Клумба №6",
             "answer": "6"
         }
     ],
     [
         {
-            "capture": "d1.png",
+            "capture": "d1.jpg",
             "label": "Дизайн №1",
             "answer": "5"
         },
         {
-            "capture": "d2.png",
+            "capture": "d2.jpg",
             "label": "Дизайн №2",
             "answer": "10"
         },
         {
-            "capture": "d3.png",
+            "capture": "d3.jpg",
             "label": "Дизайн №3",
             "answer": "6"
         },
@@ -53,12 +53,12 @@
             "answer": "28"
         },
         {
-            "capture": "d5.png",
+            "capture": "d5.jpg",
             "label": "Дизайн №5",
             "answer": "20"
         },
         {
-            "capture": "d6.png",
+            "capture": "d6.jpg",
             "label": "Дизайн №6",
             "answer": "14"
         }
